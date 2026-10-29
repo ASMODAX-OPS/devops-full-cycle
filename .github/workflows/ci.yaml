@@ -14,7 +14,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r src/requirements.txt
-      - run: python -m pytest src
+      - run: python -m test.py src
 
   build-push:
     needs: test
