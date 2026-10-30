@@ -1,0 +1,4 @@
+apiVersion: v2
+name: taskapi
+version: 0.1.0          # versión del chart
+appVersion: "1.0.0"     # versión de tu app

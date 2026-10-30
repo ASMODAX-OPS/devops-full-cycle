@@ -1,0 +1,14 @@
+- name: Preparar estación DevOps          # nombre del "play"
+  hosts: local                            # a qué grupo del inventario aplica
+  become: true                            # ejecuta con sudo
+  tasks:                                  # lista ordenada de tareas
+    - name: Instalar paquetes base
+      ansible.builtin.apt:                # módulo apt
+        name: [git, curl, jq, unzip]
+        state: present                    # "present" = asegurar que esté instalado (idempotente)
+        update_cache: true
+    - name: Crear carpeta de trabajo
+      ansible.builtin.file:
+        path: /opt/lab
+        state: directory
+        mode: "0755"

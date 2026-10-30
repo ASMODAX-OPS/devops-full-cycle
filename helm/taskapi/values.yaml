@@ -1,0 +1,6 @@
+replicaCount: 2
+image:
+  repository: 22alanfelipe1/taskapi
+  tag: latest
+metrics:
+  enabled: false

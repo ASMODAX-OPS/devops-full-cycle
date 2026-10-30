@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app: {{ .Release.Name }}
+spec:
+  selector:
+    app: {{ .Release.Name }}       # envía tráfico a pods con esta etiqueta
+  ports:
+    - name: http
+      port: 80                     # puerto del Service
+      targetPort: http             # puerto con nombre "http" del contenedor (5000)
